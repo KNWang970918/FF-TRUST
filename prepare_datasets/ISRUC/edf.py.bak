@@ -1,0 +1,9 @@
+from mne.io import read_raw_edf as _mne_read_raw_edf
+from mne.io import read_raw_bdf as _mne_read_raw_bdf
+from mne.io import read_raw_gdf as _mne_read_raw_gdf
+def read_raw_edf(input_fname, *args, **kwargs):
+    return _mne_read_raw_edf(input_fname, *args, **kwargs)
+def read_raw_bdf(input_fname, *args, **kwargs):
+    return _mne_read_raw_bdf(input_fname, *args, **kwargs)
+def read_raw_gdf(input_fname, *args, **kwargs):
+    return _mne_read_raw_gdf(input_fname, *args, **kwargs)
