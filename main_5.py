@@ -8,11 +8,11 @@ import torch
 from trainer import Trainer
 
 datasets = [
-    #'sleep-edfx',
-    #'HMC',
-    #'ISRUC',
+    'sleep-edfx',
+    'HMC',
+    'ISRUC',
     'SHHS1',
-    #'P2018',
+    'P2018',
 ]
 
 
@@ -53,10 +53,10 @@ def main():
     parser.add_argument('--label_smoothing', type=float, default=0.1)
     parser.add_argument("--log_dir", default="runs")
     parser.add_argument("--exp_name", default="exp5_HMC_SleepDG")
-    parser.add_argument('--encoder_type',type=str,default='deepsleep',choices=['transformer', 'deepsleep'],
+    parser.add_argument('--encoder_type',type=str,default='transformer',choices=['transformer', 'deepsleep'],
     help='encoder backbone type')
 
-    parser.add_argument('--ce_weight', type=float, default=0.9)
+    parser.add_argument('--ce_weight', type=float, default=1.0)
     parser.add_argument('--lambda_coral', type=float, default=0.5)
     parser.add_argument('--lambda_ae', type=float, default=0.5)
 
@@ -70,8 +70,8 @@ def main():
     parser.add_argument('--lambda_fourier', type=float, default=0)
     parser.add_argument('--fourier_momentum', type=float, default=0)
 
-    parser.add_argument('--elr_warmup_start', type=int, default=20)
-    parser.add_argument('--elr_warmup_end', type=int, default=25)
+    parser.add_argument('--elr_warmup_start', type=int, default=0)
+    parser.add_argument('--elr_warmup_end', type=int, default=1)
     parser.add_argument('--elr_warmup_init', type=float, default=0.0)
     
     parser.add_argument('--noise_mode', type=str, default='symmetric',
