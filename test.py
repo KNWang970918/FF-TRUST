@@ -21,7 +21,7 @@ from utils.visualize import Visualization
 
 
 def main():
-    parser = argparse.ArgumentParser(description='SleepDG')
+    parser = argparse.ArgumentParser(description='FF-TRUST')
     parser.add_argument('--target_domains', type=str, default='sleep-edfx', help='target_domains')
     parser.add_argument('--seed', type=int, default=0, help='random seed (default: 0)')
     parser.add_argument('--cuda', type=int, default=0, help='cuda number (default: 1)')
